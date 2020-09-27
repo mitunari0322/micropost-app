@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   #ユーザー登録機能
   get "signup", to: "users#new"
   resources :users, only: [:index, :show, :new, :create]
+  
+  #投稿機能
+  resources :microposts, only: [:create, :destroy]
 end
