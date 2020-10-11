@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     member do
       get "followings"
       get "followers"
+      get "likes"
     end
   end
   #投稿機能
@@ -20,4 +21,7 @@ Rails.application.routes.draw do
   
   #フォロー機能
   resources :relationships, only: [:create, :destroy]
+  
+  #お気に入り機能
+  resources :favorites, onry: [:create, :destroy]
 end
